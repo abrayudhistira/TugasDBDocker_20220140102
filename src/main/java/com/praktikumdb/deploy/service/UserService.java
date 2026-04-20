@@ -27,4 +27,15 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
+    public User updateUSer(String id, User request) {
+        User existingUser = userRepository.findById(id).orElse(null);
+
+        if (existingUser != null) {
+            existingUser.setName(request.getName());
+            existingUser.setNim(request.getNim());
+            return userRepository.save(existingUser);
+        }
+        return null;
+    }
+
 }
