@@ -1,5 +1,6 @@
 package com.praktikumdb.deploy.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import com.praktikumdb.deploy.model.User;
@@ -16,6 +17,10 @@ public class UserService {
     public User addUSer(User request) {
         request.setId(UUID.randomUUID().toString());
         return userRepository.save(request);
+    }
+
+    public List<User> getAllUser() {
+        return userRepository.findAll();
     }
 
 }
