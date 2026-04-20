@@ -3,9 +3,12 @@ package com.praktikumdb.deploy.service;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.stereotype.Service;
+
 import com.praktikumdb.deploy.model.User;
 import com.praktikumdb.deploy.repository.UserRepository;
 
+@Service
 public class UserService {
 
     private final UserRepository userRepository;
